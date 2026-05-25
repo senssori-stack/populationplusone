@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Downloads — Population Plus One</title>
+<meta name="description" content="Download Population Plus One apps on iOS and Android. Cosmic 8 Ball, Written in the Stars, SuperFly Sky Wheels, and Population +1.">
+<link rel="stylesheet" href="../site.css">
+<style>
+    .downloads-hero {
+        padding: 80px 24px 72px; text-align: center;
+        background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.1) 0%, transparent 70%);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .downloads-grid {
+        max-width: 900px; margin: 56px auto; padding: 0 24px;
+        display: flex; flex-direction: column; gap: 24px;
+    }
+    .dl-card {
+        background: var(--card); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 36px;
+        display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center;
+        position: relative; overflow: hidden; transition: border-color 0.2s;
+    }
+    .dl-card:hover { border-color: rgba(255,255,255,0.14); }
+    .dl-card::before {
+        content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
+        background: var(--card-accent);
+    }
+    .dl-icon { font-size: 52px; }
+    .dl-info {}
+    .dl-name { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .dl-category { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+    .dl-desc { font-size: 14px; color: var(--muted); line-height: 1.65; max-width: 480px; margin-bottom: 14px; }
+    .dl-meta { display: flex; gap: 10px; flex-wrap: wrap; }
+    .dl-chip {
+        font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px;
+        background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: var(--muted);
+    }
+    .dl-buttons { display: flex; flex-direction: column; gap: 12px; min-width: 180px; }
+    .store-btn-large {
+        display: flex; align-items: center; gap: 12px;
+        padding: 14px 20px; border-radius: 12px; text-decoration: none;
+        background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+        transition: all 0.2s; color: var(--text); white-space: nowrap;
+    }
+    .store-btn-large:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.2); }
+    .store-btn-large.primary-dl {
+        background: var(--card-accent); border-color: transparent;
+    }
+    .store-btn-large.primary-dl:hover { opacity: 0.88; }
+    .store-btn-icon-lg { font-size: 22px; }
+    .store-btn-sub { font-size: 10px; color: rgba(255,255,255,0.6); display: block; }
+    .store-btn-name-lg { font-size: 14px; font-weight: 700; display: block; }
+
+    .coming-soon {
+        opacity: 0.5; pointer-events: none;
+    }
+    .coming-soon-badge {
+        font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+        background: rgba(212,175,55,0.15); color: var(--gold); padding: 3px 10px;
+        border-radius: 20px; border: 1px solid rgba(212,175,55,0.3); margin-left: 10px;
+    }
+
+    .platform-note {
+        max-width: 900px; margin: 0 auto 56px; padding: 0 24px;
+        display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    }
+    .platform-card {
+        background: var(--card); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 28px 32px;
+        display: flex; gap: 20px; align-items: center;
+    }
+    .platform-icon { font-size: 36px; flex-shrink: 0; }
+    .platform-name { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .platform-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    @media (max-width: 800px) {
+        .dl-card { grid-template-columns: auto 1fr; }
+        .dl-buttons { grid-column: 1 / -1; flex-direction: row; min-width: 0; }
+        .store-btn-large { flex: 1; justify-content: center; }
+    }
+    @media (max-width: 560px) {
+        .dl-card { grid-template-columns: 1fr; }
+        .dl-icon { font-size: 40px; }
+        .platform-note { grid-template-columns: 1fr; }
+        .dl-buttons { flex-direction: column; }
+    }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+    <a href="../" class="nav-logo">Population Plus One</a>
+    <ul class="nav-links">
+        <li><a href="../apps/">Apps</a></li>
+        <li><a href="../about/">About</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+        <li><a href="../support/">Support</a></li>
+        <li><a href="../downloads/" class="active">Downloads</a></li>
+        <li><a href="mailto:support@populationplusone.com" class="nav-cta">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="downloads-hero">
+    <span class="page-eyebrow">Get the Apps</span>
+    <h1 class="section-title" style="font-size:clamp(28px,5vw,52px); margin-bottom:14px;">Download</h1>
+    <p class="section-sub" style="max-width:460px; margin:0 auto;">
+        All Population Plus One apps are free to download on iOS and Android. No account required.
+    </p>
+</div>
+
+<div class="downloads-grid">
+
+    <!-- Cosmic 8 Ball -->
+    <div class="dl-card" style="--card-accent:#7c3aed;">
+        <div class="dl-icon">🎱</div>
+        <div class="dl-info">
+            <div class="dl-name">Cosmic 8 Ball</div>
+            <div class="dl-category">Astrology · Oracle · Entertainment</div>
+            <div class="dl-desc">AI-powered astrology oracle. Real-time cosmic conditions meet zodiac wisdom to answer your questions.</div>
+            <div class="dl-meta">
+                <span class="dl-chip">Free</span>
+                <span class="dl-chip">iOS &amp; Android</span>
+                <span class="dl-chip">No Account</span>
+                <span class="dl-chip">Offline</span>
+            </div>
+        </div>
+        <div class="dl-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.newearthling.cosmic8ball" class="store-btn-large primary-dl" target="_blank" rel="noopener" style="background:#7c3aed;">
+                <span class="store-btn-icon-lg">▶</span>
+                <div><span class="store-btn-sub">Get it on</span><span class="store-btn-name-lg">Google Play</span></div>
+            </a>
+            <a href="https://apps.apple.com" class="store-btn-large" target="_blank" rel="noopener">
+                <span class="store-btn-icon-lg"></span>
+                <div><span class="store-btn-sub">Download on the</span><span class="store-btn-name-lg">App Store</span></div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Written in the Stars -->
+    <div class="dl-card" style="--card-accent:#3b82f6;">
+        <div class="dl-icon">✨</div>
+        <div class="dl-info">
+            <div class="dl-name">Written in the Stars</div>
+            <div class="dl-category">Astrology · Horoscopes · Lifestyle</div>
+            <div class="dl-desc">Daily horoscopes, full birth charts, and compatibility readings personalized to your exact birth moment.</div>
+            <div class="dl-meta">
+                <span class="dl-chip">Free</span>
+                <span class="dl-chip">iOS &amp; Android</span>
+                <span class="dl-chip">No Account</span>
+                <span class="dl-chip">Offline</span>
+            </div>
+        </div>
+        <div class="dl-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.newearthling.writteninthestars" class="store-btn-large primary-dl" target="_blank" rel="noopener" style="background:#3b82f6;">
+                <span class="store-btn-icon-lg">▶</span>
+                <div><span class="store-btn-sub">Get it on</span><span class="store-btn-name-lg">Google Play</span></div>
+            </a>
+            <a href="https://apps.apple.com" class="store-btn-large" target="_blank" rel="noopener">
+                <span class="store-btn-icon-lg"></span>
+                <div><span class="store-btn-sub">Download on the</span><span class="store-btn-name-lg">App Store</span></div>
+            </a>
+        </div>
+    </div>
+
+    <!-- SuperFly Sky Wheels -->
+    <div class="dl-card" style="--card-accent:#f59e0b;">
+        <div class="dl-icon">🎡</div>
+        <div class="dl-info">
+            <div class="dl-name">SuperFly Sky Wheels</div>
+            <div class="dl-category">Gaming · Action · Entertainment</div>
+            <div class="dl-desc">A motion-responsive spinning wheel experience. Tilt, move, and charge to build energy. Zero data collected.</div>
+            <div class="dl-meta">
+                <span class="dl-chip">Free</span>
+                <span class="dl-chip">iOS &amp; Android</span>
+                <span class="dl-chip">No Account</span>
+                <span class="dl-chip">No Data</span>
+            </div>
+        </div>
+        <div class="dl-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.newearthling.SuperFlySkyWheels" class="store-btn-large primary-dl" target="_blank" rel="noopener" style="background:#f59e0b; color:#07071a;">
+                <span class="store-btn-icon-lg">▶</span>
+                <div><span class="store-btn-sub" style="color:rgba(0,0,0,0.5);">Get it on</span><span class="store-btn-name-lg">Google Play</span></div>
+            </a>
+            <a href="https://apps.apple.com" class="store-btn-large" target="_blank" rel="noopener">
+                <span class="store-btn-icon-lg"></span>
+                <div><span class="store-btn-sub">Download on the</span><span class="store-btn-name-lg">App Store</span></div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Population +1 -->
+    <div class="dl-card" style="--card-accent:#06b6d4;">
+        <div class="dl-icon">👶</div>
+        <div class="dl-info">
+            <div class="dl-name">Population +1</div>
+            <div class="dl-category">Parenting · Newborn · Lifestyle</div>
+            <div class="dl-desc">A private keepsake companion for new parents. Track milestones, save photos, play lullabies — all offline.</div>
+            <div class="dl-meta">
+                <span class="dl-chip">Free</span>
+                <span class="dl-chip">iOS &amp; Android</span>
+                <span class="dl-chip">No Account</span>
+                <span class="dl-chip">COPPA Compliant</span>
+            </div>
+        </div>
+        <div class="dl-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.newearthling.NewbornApp" class="store-btn-large primary-dl" target="_blank" rel="noopener" style="background:#06b6d4; color:#07071a;">
+                <span class="store-btn-icon-lg">▶</span>
+                <div><span class="store-btn-sub" style="color:rgba(0,0,0,0.5);">Get it on</span><span class="store-btn-name-lg">Google Play</span></div>
+            </a>
+            <a href="https://apps.apple.com" class="store-btn-large" target="_blank" rel="noopener">
+                <span class="store-btn-icon-lg"></span>
+                <div><span class="store-btn-sub">Download on the</span><span class="store-btn-name-lg">App Store</span></div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="platform-note">
+    <div class="platform-card">
+        <div class="platform-icon">▶</div>
+        <div>
+            <div class="platform-name">Google Play</div>
+            <div class="platform-desc">All four apps are live on Google Play. Android 8.0+ required.</div>
+        </div>
+    </div>
+    <div class="platform-card">
+        <div class="platform-icon"></div>
+        <div>
+            <div class="platform-name">App Store</div>
+            <div class="platform-desc">iOS apps are in submission or coming soon. iOS 16+ required.</div>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">
+                <div class="footer-brand-name">Population Plus One</div>
+                <div class="footer-brand-desc">Building thoughtful mobile apps for life's most meaningful moments.</div>
+            </div>
+        </div>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <div class="footer-col-title">Apps</div>
+                <ul>
+                    <li><a href="../apps/#cosmic">Cosmic 8 Ball</a></li>
+                    <li><a href="../apps/#stars">Written in the Stars</a></li>
+                    <li><a href="../apps/#wheels">SuperFly Sky Wheels</a></li>
+                    <li><a href="../apps/#plusone">Population +1</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Company</div>
+                <ul>
+                    <li><a href="../about/">About</a></li>
+                    <li><a href="../support/">Support</a></li>
+                    <li><a href="../privacy/">Privacy Hub</a></li>
+                    <li><a href="../terms/">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Population Plus One. All rights reserved.</span>
+        <span><a href="../privacy/">Privacy</a> · <a href="../terms/">Terms</a> · <a href="../support/">Support</a></span>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Population Plus One</title>
+<meta name="description" content="Population Plus One is an independent mobile app studio building privacy-first apps for life's most meaningful moments.">
+<link rel="stylesheet" href="../site.css">
+<style>
+    .about-hero {
+        padding: 80px 24px 72px; text-align: center;
+        background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,175,55,0.1) 0%, transparent 70%);
+        border-bottom: 1px solid var(--border);
+    }
+    .story-section { max-width: 760px; margin: 0 auto; padding: 80px 24px; }
+    .story-section p { font-size: 16px; color: var(--muted); line-height: 1.85; margin-bottom: 24px; }
+    .story-section p:last-child { margin-bottom: 0; }
+    .story-section .highlight { color: var(--text); font-weight: 600; }
+
+    .values-section { padding: 80px 24px; background: var(--surface); }
+    .values-grid {
+        max-width: 1100px; margin: 48px auto 0;
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;
+    }
+    .value-card {
+        background: var(--card); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 32px;
+    }
+    .value-card-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+    .value-card-title { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .value-card-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    .stats-section { padding: 80px 24px; }
+    .stats-grid {
+        max-width: 760px; margin: 48px auto 0;
+        display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    }
+    .stat-block {
+        background: var(--card); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 32px 20px; text-align: center;
+    }
+    .stat-block .stat-num { font-size: 40px; font-weight: 800; color: var(--gold); }
+    .stat-block .stat-label { font-size: 12px; color: var(--muted); margin-top: 6px; letter-spacing: 0.5px; line-height: 1.4; }
+
+    .vision-section { padding: 80px 24px; background: var(--surface); }
+    .vision-content { max-width: 760px; margin: 0 auto; }
+    .vision-content .timeline { margin-top: 48px; position: relative; }
+    .timeline::before {
+        content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 1px;
+        background: var(--border);
+    }
+    .timeline-item { display: flex; gap: 32px; margin-bottom: 40px; position: relative; }
+    .timeline-dot {
+        width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+        background: var(--card); border: 2px solid var(--border);
+        display: flex; align-items: center; justify-content: center; font-size: 16px;
+        position: relative; z-index: 1;
+    }
+    .timeline-dot.active { border-color: var(--gold); background: var(--gold-dim); }
+    .timeline-body { padding-top: 8px; }
+    .timeline-phase { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 6px; }
+    .timeline-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .timeline-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    .team-section { padding: 80px 24px; }
+    .team-card {
+        max-width: 500px; margin: 48px auto 0;
+        background: var(--card); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 40px; text-align: center;
+    }
+    .team-avatar { font-size: 64px; margin-bottom: 20px; display: block; }
+    .team-name { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .team-role { font-size: 13px; color: var(--gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .team-bio { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 24px; }
+    .team-contact a {
+        display: inline-block; padding: 10px 24px; border-radius: 10px;
+        background: var(--gold); color: #07071a; font-size: 13px; font-weight: 700;
+        text-decoration: none; transition: opacity 0.2s;
+    }
+    .team-contact a:hover { opacity: 0.85; }
+
+    @media (max-width: 768px) {
+        .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        .timeline::before { left: 16px; }
+    }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+    <a href="../" class="nav-logo">Population Plus One</a>
+    <ul class="nav-links">
+        <li><a href="../apps/">Apps</a></li>
+        <li><a href="../about/" class="active">About</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+        <li><a href="../support/">Support</a></li>
+        <li><a href="../downloads/">Downloads</a></li>
+        <li><a href="mailto:support@populationplusone.com" class="nav-cta">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="about-hero">
+    <span class="page-eyebrow">Our Story</span>
+    <h1 class="section-title" style="font-size:clamp(32px,5vw,56px); margin-bottom:16px;">Built with Intention</h1>
+    <p class="section-sub" style="max-width:540px; margin:0 auto; font-size:17px;">
+        Population Plus One is an independent mobile app studio focused on experiences that feel personal, private, and genuinely useful.
+    </p>
+</div>
+
+<div class="story-section">
+    <p>
+        <span class="highlight">Population Plus One started with a simple frustration:</span> most apps that handle your most personal moments — your baby's birth, your birth chart, your deepest questions — are wrapped in advertising networks, cloud sync requirements, and data collection you never asked for.
+    </p>
+    <p>
+        We build differently. Every app in the Population Plus One ecosystem is designed around one non-negotiable: <span class="highlight">your data belongs to you</span>. Not to an ad network. Not to a cloud platform. Not to us.
+    </p>
+    <p>
+        That constraint — privacy first, always — turns out to be a surprisingly powerful design principle. When you don't need a server, you build for offline. When you don't need an account, you build for simplicity. When you don't need to monetize data, you build apps people actually trust.
+    </p>
+    <p>
+        The result is a growing suite of apps that each tackle a different meaningful moment — welcoming a new life, exploring your place in the cosmos, chasing the sky, seeking answers in the stars. Four apps. One philosophy.
+    </p>
+</div>
+
+<section class="values-section">
+    <div class="container">
+        <div class="section-header-center">
+            <p class="section-label">What We Believe</p>
+            <h2 class="section-title">Our Values</h2>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <span class="value-card-icon">🔒</span>
+                <div class="value-card-title">Privacy Is Non-Negotiable</div>
+                <div class="value-card-desc">We don't run ad networks. We don't sell data. We don't require accounts. Your personal information stays on your device, always.</div>
+            </div>
+            <div class="value-card">
+                <span class="value-card-icon">🌐</span>
+                <div class="value-card-title">Offline First</div>
+                <div class="value-card-desc">Your experience shouldn't depend on a server, a network, or a subscription. Most features work completely offline.</div>
+            </div>
+            <div class="value-card">
+                <span class="value-card-icon">✦</span>
+                <div class="value-card-title">Craft Over Quantity</div>
+                <div class="value-card-desc">Every animation, every screen, every interaction is considered. We'd rather build four great apps than forty mediocre ones.</div>
+            </div>
+            <div class="value-card">
+                <span class="value-card-icon">🤖</span>
+                <div class="value-card-title">AI With Transparency</div>
+                <div class="value-card-desc">When AI generates content in our apps, we say so clearly. Entertainment is entertainment. Advice is advice. We never blur the line.</div>
+            </div>
+            <div class="value-card">
+                <span class="value-card-icon">👶</span>
+                <div class="value-card-title">Family-Grade Privacy</div>
+                <div class="value-card-desc">Apps that handle children's data are held to an even higher standard. COPPA compliance isn't a checkbox — it's a design principle.</div>
+            </div>
+            <div class="value-card">
+                <span class="value-card-icon">🚀</span>
+                <div class="value-card-title">Ship and Improve</div>
+                <div class="value-card-desc">We're a small team that moves fast and listens closely. Every update reflects real feedback from real users.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="container section-header-center">
+        <p class="section-label">By the Numbers</p>
+        <h2 class="section-title">The Ecosystem Today</h2>
+    </div>
+    <div class="stats-grid">
+        <div class="stat-block">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Published Apps</div>
+        </div>
+        <div class="stat-block">
+            <div class="stat-num">0</div>
+            <div class="stat-label">Data Servers or Cloud Storage</div>
+        </div>
+        <div class="stat-block">
+            <div class="stat-num">0</div>
+            <div class="stat-label">Advertising Networks</div>
+        </div>
+        <div class="stat-block">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Cosmic Potential</div>
+        </div>
+    </div>
+</section>
+
+<section class="vision-section">
+    <div class="vision-content">
+        <div class="container section-header-center">
+            <p class="section-label" style="text-align:center;">Where We're Going</p>
+            <h2 class="section-title" style="text-align:center;">The Roadmap</h2>
+            <p class="section-sub" style="text-align:center; max-width:480px; margin:0 auto;">Population Plus One is growing from an app collection into a connected ecosystem — with shared infrastructure, shared design, and a unified platform.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot active">✓</div>
+                <div class="timeline-body">
+                    <div class="timeline-phase">Phase 1 — Complete</div>
+                    <div class="timeline-title">Launch the Core Four</div>
+                    <div class="timeline-desc">Cosmic 8 Ball, Written in the Stars, SuperFly Sky Wheels, and Population +1 published to iOS and Android.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot active">✓</div>
+                <div class="timeline-body">
+                    <div class="timeline-phase">Phase 2 — Complete</div>
+                    <div class="timeline-title">Ecosystem Identity</div>
+                    <div class="timeline-desc">Unified website, shared privacy hub, consistent branding, centralized support, and GitHub organization established.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">3</div>
+                <div class="timeline-body">
+                    <div class="timeline-phase">Phase 3 — In Progress</div>
+                    <div class="timeline-title">Shared Infrastructure</div>
+                    <div class="timeline-desc">Shared UI component library, shared animation engine, shared design system — so every new app starts with a strong foundation.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">4</div>
+                <div class="timeline-body">
+                    <div class="timeline-phase">Phase 4 — Planned</div>
+                    <div class="timeline-title">Platform Expansion</div>
+                    <div class="timeline-desc">Optional cloud features for users who want them — with the same privacy-first architecture. New apps in the pipeline.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">5</div>
+                <div class="timeline-body">
+                    <div class="timeline-phase">Phase 5 — Vision</div>
+                    <div class="timeline-title">The SaaS Platform</div>
+                    <div class="timeline-desc">A unified Population Plus One platform — connected app experiences, cross-app data portability (opt-in), and a developer ecosystem.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="container section-header-center">
+        <p class="section-label">The Team</p>
+        <h2 class="section-title">Who We Are</h2>
+    </div>
+    <div class="team-card">
+        <span class="team-avatar">👨‍💻</span>
+        <div class="team-name">Patrick McCullen</div>
+        <div class="team-role">Founder &amp; Developer</div>
+        <div class="team-bio">
+            Patrick builds Population Plus One as an independent developer — designing, coding, and shipping every app from scratch. He believes that small teams can build software with more care, more intention, and more respect for the user than large ones.
+        </div>
+        <div class="team-contact">
+            <a href="mailto:support@populationplusone.com">Get in Touch</a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">
+                <div class="footer-brand-name">Population Plus One</div>
+                <div class="footer-brand-desc">Building thoughtful mobile apps for life's most meaningful moments.</div>
+            </div>
+        </div>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <div class="footer-col-title">Apps</div>
+                <ul>
+                    <li><a href="../apps/#cosmic">Cosmic 8 Ball</a></li>
+                    <li><a href="../apps/#stars">Written in the Stars</a></li>
+                    <li><a href="../apps/#wheels">SuperFly Sky Wheels</a></li>
+                    <li><a href="../apps/#plusone">Population +1</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Company</div>
+                <ul>
+                    <li><a href="../about/">About</a></li>
+                    <li><a href="../support/">Support</a></li>
+                    <li><a href="../downloads/">Downloads</a></li>
+                    <li><a href="../privacy/">Privacy Hub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Population Plus One. All rights reserved.</span>
+        <span><a href="../privacy/">Privacy</a> · <a href="../terms/">Terms</a> · <a href="../support/">Support</a></span>
+    </div>
+</footer>
+
+</body>
+</html>

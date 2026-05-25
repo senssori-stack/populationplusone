@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policies — Population Plus One</title>
+<link rel="stylesheet" href="privacy-shared.css">
+<style>
+    .apps-grid {
+        max-width: 760px; margin: 40px auto; padding: 0 24px;
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;
+    }
+    .app-card {
+        background: var(--card); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 28px 28px 24px;
+        text-decoration: none; display: block;
+        transition: border-color 0.2s, transform 0.2s;
+        position: relative; overflow: hidden;
+    }
+    .app-card::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+        background: var(--card-accent);
+    }
+    .app-card:hover { border-color: var(--card-accent); transform: translateY(-2px); }
+    .app-card-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+    .app-card-name { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .app-card-pkg { font-size: 11px; color: var(--muted); margin-bottom: 12px; font-family: monospace; }
+    .app-card-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+    .app-card-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+        font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+        padding: 3px 8px; border-radius: 6px; background: rgba(255,255,255,0.06);
+        color: var(--muted); border: 1px solid var(--border);
+    }
+    .chip-warn { background: rgba(212,175,55,0.1); color: #d4af37; border-color: rgba(212,175,55,0.25); }
+    .chip-ok { background: rgba(16,185,129,0.1); color: #34d399; border-color: rgba(16,185,129,0.2); }
+    .app-card-cta {
+        font-size: 12px; font-weight: 700; color: var(--card-accent);
+        margin-top: 18px; display: flex; align-items: center; gap: 4px;
+    }
+
+    .intro-block {
+        max-width: 760px; margin: 0 auto; padding: 0 24px;
+        text-align: center;
+    }
+    .intro-block p { font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 540px; margin: 0 auto; }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+    <a href="/" class="topbar-brand">Population Plus One</a>
+    <a href="/" class="topbar-back">← Home</a>
+</nav>
+
+<header class="policy-hero">
+    <div class="policy-hero-icon">🔒</div>
+    <h1>Privacy Policies</h1>
+    <div class="app-label">Population Plus One Apps</div>
+    <p class="summary">
+        We build apps you can trust. All four apps are designed with a simple principle: your personal data stays on your device. Select an app below to read its full privacy policy.
+    </p>
+</header>
+
+<div class="intro-block">
+    <p>Population Plus One is the parent brand behind four independent apps. Each app has its own privacy policy reflecting its specific features and permissions. No app sells your data. No app uses advertising networks.</p>
+</div>
+
+<div class="apps-grid">
+
+    <a class="app-card" href="cosmic-8-ball.html" style="--card-accent: #7c3aed;">
+        <span class="app-card-icon">🎱</span>
+        <div class="app-card-name">Cosmic 8 Ball</div>
+        <div class="app-card-pkg">com.newearthling.cosmic8ball</div>
+        <div class="app-card-desc">AI-powered astrology-inspired answers to your questions. Uses your zodiac sign and real-time cosmic conditions.</div>
+        <div class="app-card-chips">
+            <span class="chip chip-warn">Microphone (optional)</span>
+            <span class="chip chip-warn">Notifications (optional)</span>
+            <span class="chip chip-ok">No account required</span>
+            <span class="chip chip-ok">No ads</span>
+        </div>
+        <div class="app-card-cta">View Privacy Policy →</div>
+    </a>
+
+    <a class="app-card" href="written-in-the-stars.html" style="--card-accent: #3b82f6;">
+        <span class="app-card-icon">✨</span>
+        <div class="app-card-name">Written in the Stars</div>
+        <div class="app-card-pkg">com.newearthling.writteninthestars</div>
+        <div class="app-card-desc">Daily horoscopes, birth charts, and compatibility readings personalized to your exact birth moment.</div>
+        <div class="app-card-chips">
+            <span class="chip chip-warn">Contacts (optional)</span>
+            <span class="chip chip-warn">Notifications (optional)</span>
+            <span class="chip chip-ok">No account required</span>
+            <span class="chip chip-ok">No ads</span>
+        </div>
+        <div class="app-card-cta">View Privacy Policy →</div>
+    </a>
+
+    <a class="app-card" href="superfly-sky-wheels.html" style="--card-accent: #f59e0b;">
+        <span class="app-card-icon">🎡</span>
+        <div class="app-card-name">SuperFly Sky Wheels</div>
+        <div class="app-card-pkg">com.newearthling.SuperFlySkyWheels</div>
+        <div class="app-card-desc">Motion-responsive spinning wheel experience using your device sensors and location for atmospheric effects.</div>
+        <div class="app-card-chips">
+            <span class="chip chip-warn">Location (optional)</span>
+            <span class="chip chip-warn">Motion sensors</span>
+            <span class="chip chip-ok">No personal data</span>
+            <span class="chip chip-ok">No ads</span>
+        </div>
+        <div class="app-card-cta">View Privacy Policy →</div>
+    </a>
+
+    <a class="app-card" href="population-plus-one.html" style="--card-accent: #06b6d4;">
+        <span class="app-card-icon">👶</span>
+        <div class="app-card-name">Population +1</div>
+        <div class="app-card-pkg">com.newearthling.NewbornApp</div>
+        <div class="app-card-desc">A keepsake companion for new parents. Track milestones, save memories, and celebrate your newborn's first moments.</div>
+        <div class="app-card-chips">
+            <span class="chip chip-warn">Photos (optional)</span>
+            <span class="chip chip-warn">Contacts (optional)</span>
+            <span class="chip chip-ok">No account required</span>
+            <span class="chip chip-ok">No ads</span>
+        </div>
+        <div class="app-card-cta">View Privacy Policy →</div>
+    </a>
+
+</div>
+
+<div class="contact-card" style="max-width: 760px; margin: 48px auto 0; margin-left: auto; margin-right: auto; position: relative; left: 0; right: 0; box-sizing: border-box; padding: 32px 24px;">
+    <h3>Questions About Privacy?</h3>
+    <p>We're a small team and we read every message. If you have questions about how any of our apps handle your data, reach out directly.</p>
+    <a href="mailto:support@populationplusone.com">support@populationplusone.com</a>
+</div>
+
+<footer class="policy-footer">
+    <span>© 2026 Population Plus One. All rights reserved.</span>
+    <span>Patrick McCullen · <a href="mailto:support@populationplusone.com">support@populationplusone.com</a></span>
+    <a href="/">Home</a>
+</footer>
+
+</body>
+</html>

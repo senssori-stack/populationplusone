@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Population Plus One</title>
+<meta name="description" content="Get help with Cosmic 8 Ball, Written in the Stars, SuperFly Sky Wheels, or Population +1. FAQ, bug reporting, and direct contact.">
+<link rel="stylesheet" href="../site.css">
+<style>
+    .support-hero {
+        padding: 80px 24px 72px; text-align: center;
+        background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(16,185,129,0.1) 0%, transparent 70%);
+        border-bottom: 1px solid var(--border);
+    }
+
+    /* Quick actions */
+    .quick-actions {
+        max-width: 760px; margin: 48px auto; padding: 0 24px;
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;
+    }
+    .action-card {
+        background: var(--card); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 28px 24px; text-align: center;
+        text-decoration: none; color: var(--text); transition: all 0.2s;
+    }
+    .action-card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+    .action-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+    .action-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .action-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    /* FAQ */
+    .faq-section { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
+    .faq-group-title {
+        font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+        color: var(--gold); margin: 48px 0 20px;
+    }
+    .faq-item {
+        background: var(--card); border: 1px solid var(--border);
+        border-radius: 12px; margin-bottom: 10px; overflow: hidden;
+    }
+    .faq-q {
+        width: 100%; background: none; border: none; color: var(--text);
+        font-size: 15px; font-weight: 600; text-align: left; padding: 20px 24px;
+        cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+        gap: 12px; font-family: inherit; line-height: 1.5; transition: background 0.2s;
+    }
+    .faq-q:hover { background: rgba(255,255,255,0.03); }
+    .faq-q .arrow { font-size: 12px; color: var(--muted); flex-shrink: 0; transition: transform 0.2s; }
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+    .faq-a {
+        display: none; padding: 0 24px 20px; font-size: 14px; color: var(--muted); line-height: 1.75;
+        border-top: 1px solid var(--border); padding-top: 16px;
+    }
+    .faq-item.open .faq-a { display: block; }
+    .faq-a a { color: var(--gold); }
+
+    /* App-filter tabs */
+    .app-tabs {
+        display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .app-tab {
+        font-size: 12px; font-weight: 700; padding: 7px 16px; border-radius: 20px;
+        border: 1px solid var(--border); background: var(--card); color: var(--muted);
+        cursor: pointer; transition: all 0.2s; text-decoration: none;
+    }
+    .app-tab:hover, .app-tab.active { color: var(--text); border-color: rgba(255,255,255,0.25); }
+
+    /* Contact section */
+    .contact-section { background: var(--surface); padding: 80px 24px; }
+    .contact-grid {
+        max-width: 760px; margin: 0 auto;
+        display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 24px; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+    .contact-item-icon {
+        width: 44px; height: 44px; border-radius: 12px; background: var(--gold-dim);
+        display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+    .contact-item-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .contact-item-value { font-size: 14px; color: var(--text); }
+    .contact-item-value a { color: var(--gold); text-decoration: none; }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-group label { display: block; font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .form-group input, .form-group textarea, .form-group select {
+        width: 100%; background: var(--card); border: 1px solid var(--border);
+        border-radius: 10px; padding: 12px 16px; color: var(--text);
+        font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: rgba(212,175,55,0.5); }
+    .form-group textarea { min-height: 110px; resize: vertical; }
+    .form-group select option { background: var(--card); }
+
+    @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+    <a href="../" class="nav-logo">Population Plus One</a>
+    <ul class="nav-links">
+        <li><a href="../apps/">Apps</a></li>
+        <li><a href="../about/">About</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+        <li><a href="../support/" class="active">Support</a></li>
+        <li><a href="../downloads/">Downloads</a></li>
+        <li><a href="mailto:support@populationplusone.com" class="nav-cta">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="support-hero">
+    <span class="page-eyebrow">Help Center</span>
+    <h1 class="section-title" style="font-size:clamp(28px,5vw,50px); margin-bottom:14px;">Support</h1>
+    <p class="section-sub" style="max-width:480px; margin:0 auto;">
+        We're a small team and we read every message. If something's not working right, we want to know.
+    </p>
+</div>
+
+<!-- Quick Actions -->
+<div class="quick-actions">
+    <a href="mailto:support@populationplusone.com" class="action-card">
+        <span class="action-icon">✉️</span>
+        <div class="action-title">Email Support</div>
+        <div class="action-desc">Direct line to our team. We respond within 48 hours.</div>
+    </a>
+    <a href="#faq" class="action-card">
+        <span class="action-icon">❓</span>
+        <div class="action-title">FAQ</div>
+        <div class="action-desc">Quick answers to the most common questions.</div>
+    </a>
+    <a href="#contact" class="action-card">
+        <span class="action-icon">🐛</span>
+        <div class="action-title">Report a Bug</div>
+        <div class="action-desc">Something broken? Tell us and we'll fix it.</div>
+    </a>
+    <a href="../privacy/" class="action-card">
+        <span class="action-icon">🔒</span>
+        <div class="action-title">Privacy Policies</div>
+        <div class="action-desc">Read how each app handles your data.</div>
+    </a>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section" id="faq">
+    <div class="faq-group-title">General</div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I delete my data? <span class="arrow">▼</span></button>
+        <div class="faq-a">All Population Plus One apps store data locally on your device — there are no servers or accounts to delete from. To remove all data, simply uninstall the app. On iOS you can also go to <strong>Settings → General → iPhone Storage → [App Name] → Delete App</strong>. On Android, go to <strong>Settings → Apps → [App Name] → Storage → Clear Data</strong>.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Do any of your apps require an account? <span class="arrow">▼</span></button>
+        <div class="faq-a">No. None of our apps require you to create an account or sign in. Everything works from the moment you install. Your data is stored on your device and belongs to you.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Do your apps work offline? <span class="arrow">▼</span></button>
+        <div class="faq-a">Yes — all core features work completely offline. No internet connection is required for any Population Plus One app. Some optional features (like cross-promotion links) will open your browser, but nothing in the core experience depends on the network.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I request a refund? <span class="arrow">▼</span></button>
+        <div class="faq-a">All apps are currently free. If you made an in-app purchase and need a refund, contact the platform directly: for iOS go to <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>, for Android go to the Play Store → Order History → Request Refund. Feel free to email us too and we'll help you through the process.</div>
+    </div>
+
+    <div class="faq-group-title">Cosmic 8 Ball</div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Why does the app keep giving me similar answers? <span class="arrow">▼</span></button>
+        <div class="faq-a">Cosmic 8 Ball generates answers based on real-time cosmic conditions — your zodiac sign, current moon phase, planetary positions, and time of day. If you ask multiple questions in a short period, the cosmic conditions haven't changed much, so answers may have a similar tone. Try again at a different time of day, or wait for a significant shift (like a new moon phase).</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">The microphone isn't working — how do I fix it? <span class="arrow">▼</span></button>
+        <div class="faq-a">Voice input requires microphone and speech recognition permissions. On iOS, go to <strong>Settings → Cosmic 8 Ball → Microphone</strong> and make sure it's enabled. On Android, go to <strong>Settings → Apps → Cosmic 8 Ball → Permissions → Microphone</strong>. If it still doesn't work, try restarting the app.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">What's the difference between the response modes? <span class="arrow">▼</span></button>
+        <div class="faq-a"><strong>Cosmic Guidance:</strong> Thoughtful, insightful responses based on your sign and current cosmic energy. <strong>Mixed Energy:</strong> Unpredictable — wise, funny, cryptic, or chaotic. <strong>Fun Mode:</strong> Sharp, sarcastic, meme-worthy. <strong>Party Mode:</strong> Group-friendly answers based on collective cosmic energy — no personal info used, great for sharing with friends.</div>
+    </div>
+
+    <div class="faq-group-title">Written in the Stars</div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">My rising sign seems wrong — what should I check? <span class="arrow">▼</span></button>
+        <div class="faq-a">Rising sign (ascendant) calculation requires your exact birth time and precise birth location. Make sure you've entered both accurately. Even a 15-minute difference in birth time can shift your rising sign. If you don't know your exact birth time, the app will use noon as a default — but the rising sign shown will not be accurate without the correct time.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I add someone for compatibility? <span class="arrow">▼</span></button>
+        <div class="faq-a">Navigate to the Compatibility section and tap "Add Person." You can enter their name and birth data manually, or use Contacts access to pre-fill their name (you still enter the birth data yourself). Once added, you'll see a full synastry reading.</div>
+    </div>
+
+    <div class="faq-group-title">Population +1</div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Can I back up my baby's data? <span class="arrow">▼</span></button>
+        <div class="faq-a">Currently, data is stored locally on your device and automatic cloud backup is not available. Your device's native backup (iCloud on iOS, Google Backup on Android) may back up the app's local storage as part of your device backup — check your backup settings. A dedicated export feature is on our roadmap.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">The lullabies stop when I lock my screen — how do I fix this? <span class="arrow">▼</span></button>
+        <div class="faq-a">Population +1 uses background audio to keep lullabies playing. On iOS, make sure <strong>Background App Refresh</strong> is enabled for Population +1 in Settings. Also check that the app has the audio session permission. If it continues to stop, try using the phone's native Control Center to resume playback.</div>
+    </div>
+
+    <div class="faq-group-title">SuperFly Sky Wheels</div>
+
+    <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">The wheel doesn't respond to my device motion — what's wrong? <span class="arrow">▼</span></button>
+        <div class="faq-a">SuperFly Sky Wheels uses your device's motion sensors. On iOS, go to <strong>Settings → SuperFly Sky Wheels → Motion &amp; Fitness</strong> and make sure it's allowed. On some Android devices, motion sensor access may be restricted. Try calibrating your device (wave it in a figure-8 pattern) or restarting the app.</div>
+    </div>
+</div>
+
+<!-- Contact -->
+<section class="contact-section" id="contact">
+    <div class="contact-grid">
+        <div>
+            <p class="section-label">Get in Touch</p>
+            <h2 class="section-title" style="font-size:clamp(24px,4vw,36px);">We'd Love to Hear From You</h2>
+            <p class="section-sub" style="font-size:15px; margin-bottom:36px;">Bug report, feature request, general question, or just saying hi — we read everything and respond personally.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-item-icon">✉️</div>
+                    <div>
+                        <div class="contact-item-label">Support Email</div>
+                        <div class="contact-item-value"><a href="mailto:support@populationplusone.com">support@populationplusone.com</a></div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">⏱️</div>
+                    <div>
+                        <div class="contact-item-label">Response Time</div>
+                        <div class="contact-item-value">Usually within 48 hours</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">👤</div>
+                    <div>
+                        <div class="contact-item-label">Developer</div>
+                        <div class="contact-item-value">Patrick McCullen</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form class="contact-form" onsubmit="return false;">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+                <label>App</label>
+                <select>
+                    <option value="">Select an app...</option>
+                    <option>Cosmic 8 Ball</option>
+                    <option>Written in the Stars</option>
+                    <option>SuperFly Sky Wheels</option>
+                    <option>Population +1</option>
+                    <option>General / Website</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Type</label>
+                <select>
+                    <option>Bug Report</option>
+                    <option>Feature Request</option>
+                    <option>Privacy Question</option>
+                    <option>General Question</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea placeholder="Describe the issue or question..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm" style="align-self:flex-start;">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">
+                <div class="footer-brand-name">Population Plus One</div>
+                <div class="footer-brand-desc">Building thoughtful mobile apps for life's most meaningful moments.</div>
+            </div>
+        </div>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <div class="footer-col-title">Apps</div>
+                <ul>
+                    <li><a href="../apps/#cosmic">Cosmic 8 Ball</a></li>
+                    <li><a href="../apps/#stars">Written in the Stars</a></li>
+                    <li><a href="../apps/#wheels">SuperFly Sky Wheels</a></li>
+                    <li><a href="../apps/#plusone">Population +1</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Company</div>
+                <ul>
+                    <li><a href="../about/">About</a></li>
+                    <li><a href="../support/">Support</a></li>
+                    <li><a href="../downloads/">Downloads</a></li>
+                    <li><a href="../privacy/">Privacy Hub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Population Plus One. All rights reserved.</span>
+        <span><a href="../privacy/">Privacy</a> · <a href="../terms/">Terms</a> · <a href="../support/">Support</a></span>
+    </div>
+</footer>
+
+<script>
+function toggle(btn) {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+}
+</script>
+</body>
+</html>

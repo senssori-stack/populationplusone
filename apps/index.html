@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Apps — Population Plus One</title>
+<meta name="description" content="Four thoughtfully crafted mobile apps from Population Plus One — each one built for a different meaningful moment.">
+<link rel="stylesheet" href="../site.css">
+<style>
+    .apps-hero {
+        padding: 80px 24px 72px; text-align: center;
+        background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.12) 0%, transparent 70%);
+        border-bottom: 1px solid var(--border);
+    }
+    .filter-bar {
+        max-width: 1100px; margin: 0 auto 48px; padding: 0 24px;
+        display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+    }
+    .filter-chip {
+        font-size: 12px; font-weight: 700; letter-spacing: 0.5px; padding: 7px 18px;
+        border-radius: 20px; border: 1px solid var(--border); background: var(--card);
+        color: var(--muted); cursor: pointer; text-decoration: none; transition: all 0.2s;
+    }
+    .filter-chip:hover, .filter-chip.active { color: var(--text); border-color: rgba(255,255,255,0.25); }
+
+    /* Full app cards */
+    .full-app-grid {
+        max-width: 1100px; margin: 0 auto; padding: 0 24px;
+        display: flex; flex-direction: column; gap: 48px;
+    }
+    .full-app-card {
+        background: var(--card); border: 1px solid var(--border);
+        border-radius: var(--radius); overflow: hidden;
+        display: grid; grid-template-columns: 320px 1fr; min-height: 320px;
+        transition: border-color 0.2s;
+    }
+    .full-app-card:hover { border-color: rgba(255,255,255,0.14); }
+    .full-app-sidebar {
+        padding: 40px 36px; background: rgba(255,255,255,0.02);
+        border-right: 1px solid var(--border);
+        display: flex; flex-direction: column; justify-content: space-between;
+        position: relative; overflow: hidden;
+    }
+    .full-app-sidebar::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+        background: var(--card-accent);
+    }
+    .full-app-icon { font-size: 56px; margin-bottom: 20px; display: block; }
+    .full-app-name { font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .full-app-tagline { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+    .full-app-store-btns { display: flex; flex-direction: column; gap: 10px; }
+    .store-btn {
+        display: flex; align-items: center; gap: 10px;
+        padding: 11px 16px; border-radius: 10px; text-decoration: none;
+        border: 1px solid var(--border); background: rgba(255,255,255,0.04);
+        transition: all 0.2s; color: var(--text);
+    }
+    .store-btn:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.07); }
+    .store-btn-icon { font-size: 20px; }
+    .store-btn-text { font-size: 11px; color: var(--muted); }
+    .store-btn-name { font-size: 13px; font-weight: 700; color: var(--text); }
+
+    .full-app-body { padding: 40px 40px 36px; }
+    .full-app-category { margin-bottom: 18px; }
+    .full-app-desc { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 28px; }
+    .features-grid {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px;
+    }
+    .feature-item { display: flex; gap: 10px; align-items: flex-start; }
+    .feature-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+    .feature-text { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .feature-text strong { color: var(--text); display: block; font-size: 13px; margin-bottom: 2px; }
+    .full-app-footer {
+        display: flex; align-items: center; justify-content: space-between;
+        padding-top: 20px; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 12px;
+    }
+    .app-meta-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .meta-chip {
+        font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px;
+        background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: var(--muted);
+    }
+    .app-policy-link {
+        font-size: 12px; font-weight: 700; color: var(--muted); text-decoration: none; transition: color 0.2s;
+    }
+    .app-policy-link:hover { color: var(--text); }
+
+    .divider-section { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
+
+    @media (max-width: 900px) {
+        .full-app-card { grid-template-columns: 1fr; }
+        .full-app-sidebar { border-right: none; border-bottom: 1px solid var(--border); padding: 32px; }
+        .full-app-store-btns { flex-direction: row; }
+        .full-app-body { padding: 28px; }
+        .features-grid { grid-template-columns: 1fr; }
+    }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+    <a href="../" class="nav-logo">Population Plus One</a>
+    <ul class="nav-links">
+        <li><a href="../apps/" class="active">Apps</a></li>
+        <li><a href="../about/">About</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+        <li><a href="../support/">Support</a></li>
+        <li><a href="../downloads/">Downloads</a></li>
+        <li><a href="mailto:support@populationplusone.com" class="nav-cta">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="apps-hero">
+    <span class="page-eyebrow">Our Products</span>
+    <h1 class="section-title" style="font-size: clamp(32px,5vw,56px); margin-bottom:16px;">Four Apps. One Universe.</h1>
+    <p class="section-sub" style="max-width:520px; margin:0 auto; font-size:17px;">
+        Each app is a complete experience designed with care for a different meaningful moment in life.
+    </p>
+</div>
+
+<div style="padding: 48px 0;">
+
+    <!-- Cosmic 8 Ball -->
+    <div class="full-app-grid" style="margin-bottom:0;">
+        <div class="full-app-card app-cosmic" id="cosmic" style="--card-accent:#7c3aed;">
+            <div class="full-app-sidebar">
+                <div>
+                    <span class="full-app-icon">🎱</span>
+                    <div class="full-app-name">Cosmic 8 Ball</div>
+                    <div class="full-app-tagline">An astrology-powered oracle that answers your deepest questions using real-time cosmic conditions.</div>
+                </div>
+                <div class="full-app-store-btns">
+                    <a href="https://play.google.com/store/apps/details?id=com.newearthling.cosmic8ball" class="store-btn" target="_blank" rel="noopener">
+                        <span class="store-btn-icon">▶</span>
+                        <div><div class="store-btn-text">Get it on</div><div class="store-btn-name">Google Play</div></div>
+                    </a>
+                    <a href="https://apps.apple.com" class="store-btn" target="_blank" rel="noopener">
+                        <span class="store-btn-icon"></span>
+                        <div><div class="store-btn-text">Download on the</div><div class="store-btn-name">App Store</div></div>
+                    </a>
+                </div>
+            </div>
+            <div class="full-app-body">
+                <div class="full-app-category">
+                    <span class="badge badge-cosmic">Astrology · Oracle · Entertainment</span>
+                </div>
+                <p class="full-app-desc">
+                    Cosmic 8 Ball blends your zodiac sign with live planetary data — moon phases, retrograde activity, and time of day — to generate AI-powered answers that shift with the cosmos. No two moments are exactly alike.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">🌙</span>
+                        <div class="feature-text"><strong>Real-Time Cosmic Engine</strong>Live moon phase, planetary positions, and retrograde status shape every answer.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✨</span>
+                        <div class="feature-text"><strong>4 Response Modes</strong>Cosmic Guidance, Mixed Energy, Fun Mode, and Party Mode for any vibe.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🌠</span>
+                        <div class="feature-text"><strong>Daily Cosmic Pull</strong>A personalized cosmic snapshot — tone, advice, lucky number, power color.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎙️</span>
+                        <div class="feature-text"><strong>Voice Input</strong>Ask your questions out loud with optional speech recognition.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📜</span>
+                        <div class="feature-text"><strong>Reading History</strong>Every question and answer saved locally for reflection.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔒</span>
+                        <div class="feature-text"><strong>Fully Private</strong>No accounts, no servers. All data stays on your device.</div>
+                    </div>
+                </div>
+                <div class="full-app-footer">
+                    <div class="app-meta-chips">
+                        <span class="meta-chip">iOS &amp; Android</span>
+                        <span class="meta-chip">Free</span>
+                        <span class="meta-chip">No Account</span>
+                        <span class="meta-chip">Offline Ready</span>
+                    </div>
+                    <a href="../privacy/cosmic-8-ball.html" class="app-policy-link">Privacy Policy →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height:40px;"></div>
+    <div class="divider-section"></div>
+    <div style="height:40px;"></div>
+
+    <!-- Written in the Stars -->
+    <div class="full-app-grid" style="margin-bottom:0;">
+        <div class="full-app-card" id="stars" style="--card-accent:#3b82f6;">
+            <div class="full-app-sidebar">
+                <div>
+                    <span class="full-app-icon">✨</span>
+                    <div class="full-app-name">Written in the Stars</div>
+                    <div class="full-app-tagline">Daily horoscopes, birth charts, and compatibility readings personalized to your exact birth moment.</div>
+                </div>
+                <div class="full-app-store-btns">
+                    <a href="https://play.google.com/store/apps/details?id=com.newearthling.writteninthestars" class="store-btn" target="_blank" rel="noopener">
+                        <span class="store-btn-icon">▶</span>
+                        <div><div class="store-btn-text">Get it on</div><div class="store-btn-name">Google Play</div></div>
+                    </a>
+                    <a href="https://apps.apple.com" class="store-btn" target="_blank" rel="noopener">
+                        <span class="store-btn-icon"></span>
+                        <div><div class="store-btn-text">Download on the</div><div class="store-btn-name">App Store</div></div>
+                    </a>
+                </div>
+            </div>
+            <div class="full-app-body">
+                <div class="full-app-category">
+                    <span class="badge badge-stars">Astrology · Horoscopes · Lifestyle</span>
+                </div>
+                <p class="full-app-desc">
+                    Deep astrology made beautiful and accessible. Written in the Stars calculates your complete natal chart — sun, moon, rising, and all planetary placements — and uses it to personalize daily guidance, transit alerts, and compatibility readings.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">🌟</span>
+                        <div class="feature-text"><strong>Full Natal Charts</strong>Sun, moon, rising, and all planetary positions calculated precisely for your birth moment.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📅</span>
+                        <div class="feature-text"><strong>Daily Horoscopes</strong>Personalized to your chart — not just your sun sign.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">💞</span>
+                        <div class="feature-text"><strong>Compatibility</strong>Full synastry readings between you and anyone in your life.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔔</span>
+                        <div class="feature-text"><strong>Transit Alerts</strong>Notifications for Mercury retrograde, full moons, and key planetary events.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🗺️</span>
+                        <div class="feature-text"><strong>Location-Aware</strong>Optional location for precise rising sign and house calculations.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔒</span>
+                        <div class="feature-text"><strong>Fully Private</strong>Birth data stays on your device. No cloud sync, no account.</div>
+                    </div>
+                </div>
+                <div class="full-app-footer">
+                    <div class="app-meta-chips">
+                        <span class="meta-chip">iOS &amp; Android</span>
+                        <span class="meta-chip">Free</span>
+                        <span class="meta-chip">No Account</span>
+                        <span class="meta-chip">Offline Ready</span>
+                    </div>
+                    <a href="../privacy/written-in-the-stars.html" class="app-policy-link">Privacy Policy →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height:40px;"></div>
+    <div class="divider-section"></div>
+    <div style="height:40px;"></div>
+
+    <!-- SuperFly Sky Wheels -->
+    <div class="full-app-grid" style="margin-bottom:0;">
+        <div class="full-app-card" id="wheels" style="--card-accent:#f59e0b;">
+            <div class="full-app-sidebar">
+                <div>
+                    <span class="full-app-icon">🎡</span>
+                    <div class="full-app-name">SuperFly Sky Wheels</div>
+                    <div class="full-app-tagline">A motion-responsive spinning wheel experience that responds to how you move through the world.</div>
+                </div>
+                <div class="full-app-store-btns">
+                    <a href="https://play.google.com/store/apps/details?id=com.newearthling.SuperFlySkyWheels" class="store-btn" target="_blank" rel="noopener">
+                        <span class="store-btn-icon">▶</span>
+                        <div><div class="store-btn-text">Get it on</div><div class="store-btn-name">Google Play</div></div>
+                    </a>
+                    <a href="https://apps.apple.com" class="store-btn" target="_blank" rel="noopener">
+                        <span class="store-btn-icon"></span>
+                        <div><div class="store-btn-text">Download on the</div><div class="store-btn-name">App Store</div></div>
+                    </a>
+                </div>
+            </div>
+            <div class="full-app-body">
+                <div class="full-app-category">
+                    <span class="badge badge-wheels">Gaming · Action · Entertainment</span>
+                </div>
+                <p class="full-app-desc">
+                    SuperFly Sky Wheels turns your device's motion into a high-energy experience. Tilt, shake, and move to control the action. Every session is different based on how you interact with the world around you.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">📡</span>
+                        <div class="feature-text"><strong>Motion-Driven</strong>Accelerometer and gyroscope make every interaction feel physical and alive.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🌤️</span>
+                        <div class="feature-text"><strong>Atmospheric Effects</strong>Optional location personalizes sky and weather-based visual themes.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <div class="feature-text"><strong>Tap to Charge</strong>Build energy with taps to spin faster and unlock higher intensities.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🚫</span>
+                        <div class="feature-text"><strong>Zero Data Collected</strong>No personal info, no accounts, no tracking. Pure experience.</div>
+                    </div>
+                </div>
+                <div class="full-app-footer">
+                    <div class="app-meta-chips">
+                        <span class="meta-chip">iOS &amp; Android</span>
+                        <span class="meta-chip">Free</span>
+                        <span class="meta-chip">No Account</span>
+                        <span class="meta-chip">No Data Collected</span>
+                    </div>
+                    <a href="../privacy/superfly-sky-wheels.html" class="app-policy-link">Privacy Policy →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height:40px;"></div>
+    <div class="divider-section"></div>
+    <div style="height:40px;"></div>
+
+    <!-- Population +1 -->
+    <div class="full-app-grid" style="margin-bottom:0;">
+        <div class="full-app-card" id="plusone" style="--card-accent:#06b6d4;">
+            <div class="full-app-sidebar">
+                <div>
+                    <span class="full-app-icon">👶</span>
+                    <div class="full-app-name">Population +1</div>
+                    <div class="full-app-tagline">A warm keepsake companion for new parents. Every precious first, beautifully preserved.</div>
+                </div>
+                <div class="full-app-store-btns">
+                    <a href="https://play.google.com/store/apps/details?id=com.newearthling.NewbornApp" class="store-btn" target="_blank" rel="noopener">
+                        <span class="store-btn-icon">▶</span>
+                        <div><div class="store-btn-text">Get it on</div><div class="store-btn-name">Google Play</div></div>
+                    </a>
+                    <a href="https://apps.apple.com" class="store-btn" target="_blank" rel="noopener">
+                        <span class="store-btn-icon"></span>
+                        <div><div class="store-btn-text">Download on the</div><div class="store-btn-name">App Store</div></div>
+                    </a>
+                </div>
+            </div>
+            <div class="full-app-body">
+                <div class="full-app-category">
+                    <span class="badge badge-plusone">Parenting · Newborn · Lifestyle</span>
+                </div>
+                <p class="full-app-desc">
+                    Population +1 is the app that arrives when your family does. Track milestones, record firsts, build a private photo keepsake book, and soothe your baby with built-in lullabies — all without an internet connection or account.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">🌟</span>
+                        <div class="feature-text"><strong>Milestone Tracker</strong>Record every first — first smile, first step, first word — with dates and notes.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📷</span>
+                        <div class="feature-text"><strong>Keepsake Photo Book</strong>Build a private, on-device photo memory book for your baby.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎵</span>
+                        <div class="feature-text"><strong>Built-In Lullabies</strong>Soothing lullabies that play in the background — no streaming required.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📣</span>
+                        <div class="feature-text"><strong>Birth Announcements</strong>Create beautiful shareable birth announcement cards.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">👨‍👩‍👧</span>
+                        <div class="feature-text"><strong>Family-First Privacy</strong>Baby data stays on your device. COPPA compliant by design.</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🌐</span>
+                        <div class="feature-text"><strong>Fully Offline</strong>Works without internet. No subscription. No server.</div>
+                    </div>
+                </div>
+                <div class="full-app-footer">
+                    <div class="app-meta-chips">
+                        <span class="meta-chip">iOS &amp; Android</span>
+                        <span class="meta-chip">Free</span>
+                        <span class="meta-chip">No Account</span>
+                        <span class="meta-chip">COPPA Compliant</span>
+                    </div>
+                    <a href="../privacy/population-plus-one.html" class="app-policy-link">Privacy Policy →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height:80px;"></div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">
+                <div class="footer-brand-name">Population Plus One</div>
+                <div class="footer-brand-desc">Building thoughtful mobile apps for life's most meaningful moments.</div>
+            </div>
+        </div>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <div class="footer-col-title">Apps</div>
+                <ul>
+                    <li><a href="#cosmic">Cosmic 8 Ball</a></li>
+                    <li><a href="#stars">Written in the Stars</a></li>
+                    <li><a href="#wheels">SuperFly Sky Wheels</a></li>
+                    <li><a href="#plusone">Population +1</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Company</div>
+                <ul>
+                    <li><a href="../about/">About</a></li>
+                    <li><a href="../support/">Support</a></li>
+                    <li><a href="../downloads/">Downloads</a></li>
+                    <li><a href="../privacy/">Privacy Hub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Population Plus One. All rights reserved.</span>
+        <span><a href="../privacy/">Privacy</a> · <a href="../terms/">Terms</a> · <a href="../support/">Support</a></span>
+    </div>
+</footer>
+
+</body>
+</html>
