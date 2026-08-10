@@ -8,6 +8,28 @@
 <style>
     :root { --accent: #7c3aed; }
     .policy-hero { background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.15) 0%, transparent 70%); }
+    .notice-box {
+        background: rgba(124,58,237,0.08);
+        border: 1px solid rgba(124,58,237,0.3);
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin: 16px 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #c4b5fd;
+    }
+    .notice-box strong { color: #e0d4ff; display: block; margin-bottom: 6px; font-size: 14px; }
+    .warning-box {
+        background: rgba(251,191,36,0.07);
+        border: 1px solid rgba(251,191,36,0.3);
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin: 16px 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #fde68a;
+    }
+    .warning-box strong { color: #fef3c7; display: block; margin-bottom: 6px; }
 </style>
 </head>
 <body>
@@ -21,22 +43,22 @@
     <div class="policy-hero-icon">🎱</div>
     <div class="app-label">Cosmic 8 Ball</div>
     <h1>Privacy Policy</h1>
-    <div class="effective-date">Effective: April 3, 2026</div>
+    <div class="effective-date">Effective: August 10, 2026</div>
     <p class="summary">
-        Cosmic 8 Ball is built for your eyes only. Your questions, your readings, your birth info — all stored locally on your device. We never see it.
+        Cosmic 8 Ball respects your privacy. Most profile and app data stays on your device. Reading and usage information may be transmitted when the default-enabled Oracle Learning Program is on, and you can disable it at any time in Settings.
     </p>
 </header>
 
 <div class="quick-facts">
     <div class="fact-chip">
         <div class="fact-chip-icon">📱</div>
-        <div class="fact-chip-label">Data Storage</div>
-        <div class="fact-chip-value">On-device only</div>
+        <div class="fact-chip-label">Profile Data</div>
+        <div class="fact-chip-value">Stored on device</div>
     </div>
     <div class="fact-chip">
-        <div class="fact-chip-icon">🌐</div>
-        <div class="fact-chip-label">External Servers</div>
-        <div class="fact-chip-value">None</div>
+        <div class="fact-chip-icon">📊</div>
+        <div class="fact-chip-label">Analytics</div>
+        <div class="fact-chip-value">On by default; opt out</div>
     </div>
     <div class="fact-chip">
         <div class="fact-chip-icon">👤</div>
@@ -69,23 +91,77 @@
     </div>
 
     <div class="policy-section">
-        <h2><span class="icon">💾</span> What We Store (Locally on Your Device)</h2>
-        <p>Cosmic 8 Ball stores the following data locally using your device's AsyncStorage. This data never leaves your device:</p>
+        <h2><span class="icon">💾</span> What We Store Locally on Your Device</h2>
+        <p>The app stores the following information locally using device storage:</p>
         <ul>
-            <li>Your first name (entered during onboarding)</li>
-            <li>Your birth month, day, and year</li>
-            <li>Your calculated zodiac sun sign</li>
-            <li>Your question and answer history (readings log)</li>
-            <li>Your selected tone mode preference (Cosmic, Mixed, Fun, Party)</li>
+            <li>Your first name and last initial</li>
+            <li>Your birth date and, when provided, birth time</li>
+            <li>Your birth city, state/province, and country</li>
+            <li>Coordinates and time zone derived from the location you select, where available</li>
+            <li>Your calculated astrology profile, including your zodiac sun sign</li>
+            <li>Your question and answer history (last 100 readings)</li>
+            <li>Your selected mode preference (Cosmic Guidance or Party Mode)</li>
             <li>Your daily cosmic pull result (refreshed each day)</li>
+            <li>Your audio and voice settings</li>
+            <li>Your notification, onboarding, display, and privacy preferences, including analytics opt-out status</li>
         </ul>
-        <p>You can delete all stored data by uninstalling the app. There is no account to delete and no server-side data to request removal of.</p>
+        <p>Profile details, settings, and history remain on the device until you change or clear them, clear the app's data through the operating system, or uninstall the app. You can clear the saved reading history from the History screen. Clearing app data or uninstalling removes the app's locally stored data. There is no Cosmic 8 Ball account to delete.</p>
+        <p>The locally stored question and answer history is separate from the limited reading information transmitted through the Oracle Learning Program described below. Your zodiac sign is calculated locally but is included in that analytics payload when analytics is enabled. Your other astrology profile fields are not included in the analytics payload.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2><span class="icon">🎂</span> Astrology Profile Information</h2>
+        <p>During setup, Cosmic 8 Ball asks for a birth date, a birth time or an indication that the time is unknown, and a birth location. Depending on the location, the saved information can include city, state/province, country, coordinates, and time zone. The app also stores the first name and last initial you enter. This information is used to:</p>
+        <ul>
+            <li>Determine your zodiac sun sign</li>
+            <li>Personalize cosmic guidance to your astrological profile</li>
+            <li>Enable birthday recognition and birthday-related features</li>
+        </ul>
+        <p>Birth location is selected from location data bundled with the app; Cosmic 8 Ball does not request your device's current GPS location for profile setup. Your first name, last initial, birth date, birth time, birth location fields, coordinates, and time zone are stored locally and are not included in the analytics payload. The zodiac sign calculated from your profile is included when analytics is enabled. Profile information is not sold or used for advertising targeting.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2><span class="icon">📊</span> Analytics &amp; Oracle Learning Program</h2>
+        <p>To improve the quality of cosmic guidance over time, Cosmic 8 Ball includes a reading and usage analytics feature called the <strong>Oracle Learning Program</strong>. Analytics is enabled by default. You can disable it at any time in Settings. When enabled, the following information is transmitted after a completed reading:</p>
+        <ul>
+            <li>Timestamp</li>
+            <li>Mode (Cosmic Guidance or Party Mode)</li>
+            <li>Your zodiac sign</li>
+            <li>Question topic/category</li>
+            <li>The user-entered question</li>
+            <li>The generated answer</li>
+            <li>Answer strength</li>
+            <li>App version</li>
+        </ul>
+
+        <div class="warning-box">
+            <strong>🔒 Privacy Reminder</strong>
+            Free-text questions can contain information that you choose to enter. Please do not include names, contact details, medical information, financial information, or other sensitive personal information. Before transmission, the app attempts to replace email addresses, common U.S. phone-number formats, Social Security numbers written with spaces or hyphens, and grouped 16-digit card numbers. This limited pattern-based redaction may not recognize every identifier, format, name, account number, or sensitive detail.
+        </div>
+
+        <h3>Where Analytics Data Is Stored</h3>
+        <p>The payload is sent via HTTPS to a Google Apps Script web endpoint and stored in an access-controlled Google Sheets spreadsheet owned by the developer. Google provides the Apps Script and Sheets infrastructure and may process the transmission and storage under Google's applicable service terms. The developer does not sell this information or provide it to advertising networks or data brokers.</p>
+
+        <h3>Purpose</h3>
+        <p>Analytics data is used to improve the Pantheon Engine's answer quality, variety, topic coverage, and overall user experience. It is not used for advertising targeting or cross-app tracking.</p>
+
+        <h3>Opting Out</h3>
+        <p>You can disable analytics at any time inside the app: <strong>Settings → Oracle Learning Program → toggle off</strong>. When disabled, new completed readings are not transmitted by the Oracle Learning Program. Your opt-out preference is stored locally on your device and persists across app sessions.</p>
+
+        <div class="notice-box">
+            <strong>No Persistent User Identifier in the Payload</strong>
+            The analytics payload does not intentionally include an account identifier, advertising identifier, device identifier, first name, last initial, birth date, birth time, birth location, coordinates, time zone, reading-history file, voice setting, or audio preference. However, question text may contain information entered by the user, and the payload includes the calculated zodiac sign.
+        </div>
+
+        <h3>Analytics Retention and Deletion</h3>
+        <p>The current analytics system does not enforce a fixed automatic expiration period. Analytics rows remain in the private spreadsheet until they are manually removed by the developer.</p>
+        <p>You may send an analytics deletion request to <a href="mailto:support@populationplusone.com">support@populationplusone.com</a> with “Cosmic 8 Ball analytics deletion request” in the subject line. The analytics payload has no account or persistent device identifier, so the developer cannot automatically identify which rows belong to you. Include enough information to search for matching rows, such as the approximate date and time, question text, mode, and zodiac sign. Matching rows can be deleted when they can be reliably identified; if the supplied information is insufficient, it may not be possible to locate the rows.</p>
     </div>
 
     <div class="policy-section">
         <h2><span class="icon">🌌</span> How Responses Are Generated</h2>
         <p>Responses in Cosmic 8 Ball are produced by a procedural celestial computation engine running entirely on your device. The engine uses Meeus orbital algorithms to calculate real-time positions for all 8 planets, detects moon phase and retrograde status, applies the ancient Chaldean planetary hour system, and scores your sun sign against current sky conditions to produce a dynamic cosmic alignment score.</p>
-        <p>No questions you ask are transmitted to any external server, AI service, or third party. All calculations run locally within the app — nothing leaves your device.</p>
+        <p>All calculations run locally within the app. No AI service or language model is used. The question you type is used to classify the topic and generate your personalized reading, and it is included in the Oracle Learning Program payload when analytics is enabled.</p>
     </div>
 
     <div class="policy-section">
@@ -93,11 +169,17 @@
         <p>Cosmic 8 Ball includes an optional voice input feature. If you choose to use it:</p>
         <ul>
             <li>The app requests permission to access your microphone</li>
-            <li>Speech recognition is handled by the device's built-in speech recognition system (Apple's SFSpeechRecognizer on iOS, Google Speech on Android)</li>
+            <li>Speech recognition is handled by the speech-recognition service configured on your device, such as Apple's or Google's service</li>
             <li>Audio is not recorded or stored by the app</li>
-            <li>Speech data may be processed by Apple or Google per their respective privacy policies</li>
+            <li>Depending on the device, operating system, selected recognition service, and settings, speech audio may be processed on the device or sent to that provider for processing under its privacy terms</li>
+            <li>The resulting transcript becomes the question in the app and can be included in the Oracle Learning Program payload when analytics is enabled</li>
         </ul>
         <p>Microphone access is entirely optional. You can type your questions instead and decline microphone permission without affecting any other app feature.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2><span class="icon">🔊</span> Text-to-Speech</h2>
+        <p>If voice output is enabled, Cosmic 8 Ball sends generated answer text to the text-to-speech engine configured on your device so the answer can be spoken aloud. The app does not record the spoken output. Text-to-speech engines differ: some synthesize entirely on the device, while others may use a provider's network service depending on the installed engine, voice, operating-system settings, and provider terms. Cosmic 8 Ball does not control those provider-specific processing choices. You can disable voice output in the app's settings.</p>
     </div>
 
     <div class="policy-section">
@@ -113,13 +195,29 @@
 
     <div class="policy-section">
         <h2><span class="icon">📡</span> Sensors &amp; Device Data</h2>
-        <p>The app uses your device's motion sensors (accelerometer, gyroscope) to create immersive visual effects — for example, the eyeball may respond to how you hold your device. Sensor data is used only in real time for visual rendering and is never stored or transmitted.</p>
+        <p>The app uses your device's motion sensors (accelerometer) to detect shake gestures for submitting questions. Sensor data is used only in real time and is never stored or transmitted.</p>
     </div>
 
     <div class="policy-section">
         <h2><span class="icon">🌐</span> Network &amp; Third Parties</h2>
-        <p>Cosmic 8 Ball does not make network requests to any external server for its core functionality. There are no analytics SDKs, advertising SDKs, or crash reporting services embedded in the app.</p>
-        <p>The only external link in the app is a cross-promotion banner in the "How It Works" screen linking to Written in the Stars on the Play Store. Tapping this link opens your device's browser — no data is sent from the app itself.</p>
+        <p>Cosmic 8 Ball can use the Google Apps Script and Google Sheets analytics infrastructure described above. Optional speech recognition and text-to-speech may also use the provider configured on your device. No advertising SDK, Firebase Analytics, Sentry, account/login service, or payment service is used by the current app.</p>
+        <p>The app contains cross-promotion links to Written in the Stars (our companion horoscope app). Tapping these links opens your device's browser or the app store — no data is sent from the app itself when you tap these links.</p>
+        <p>There are no advertising networks, social media SDKs, or third-party data brokers integrated into the app.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2><span class="icon">🚫</span> Information the App Does Not Request</h2>
+        <p>Cosmic 8 Ball does not request the following as profile or account fields:</p>
+        <ul>
+            <li>Phone numbers</li>
+            <li>Email addresses</li>
+            <li>Current GPS location</li>
+            <li>Advertising identifiers (IDFA, GAID)</li>
+            <li>Payment information</li>
+            <li>Device identifiers</li>
+            <li>Account or login credentials</li>
+        </ul>
+        <p>If you voluntarily include personal or sensitive information in a typed or dictated question, it can be included in analytics when the Oracle Learning Program is enabled. The limited redaction described above should not be treated as a guarantee that all such information will be removed.</p>
     </div>
 
     <div class="policy-section">
@@ -147,10 +245,10 @@
                     <td>Convert speech to text for questions</td>
                 </tr>
                 <tr>
-                    <td class="perm-name">Motion &amp; Fitness</td>
+                    <td class="perm-name">Motion Sensors</td>
                     <td>iOS &amp; Android</td>
                     <td>Optional</td>
-                    <td>Immersive visual effects (eyeball motion)</td>
+                    <td>Shake gesture to submit questions</td>
                 </tr>
                 <tr>
                     <td class="perm-name">Notifications</td>
@@ -158,13 +256,34 @@
                     <td>Optional</td>
                     <td>Daily cosmic pull reminders</td>
                 </tr>
+                <tr>
+                    <td class="perm-name">Internet Access</td>
+                    <td>iOS &amp; Android</td>
+                    <td>App permission; analytics optional</td>
+                    <td>Oracle Learning Program analytics and user-opened external links</td>
+                </tr>
             </tbody>
         </table>
     </div>
 
     <div class="policy-section">
+        <h2><span class="icon">✋</span> Your Choices</h2>
+        <ul>
+            <li><strong>Disable analytics:</strong> Settings → Oracle Learning Program → toggle off</li>
+            <li><strong>Clear reading history:</strong> Use the clear option in the History screen</li>
+            <li><strong>Delete all local app data:</strong> Clear the app's data through device settings or uninstall the app</li>
+            <li><strong>Request deletion of identifiable analytics rows:</strong> Follow the email process and identification limitations described under Analytics Retention and Deletion</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2><span class="icon">🔐</span> Security</h2>
+        <p>Analytics transmissions use HTTPS, and the destination spreadsheet is access-controlled. No method of electronic transmission or storage is completely secure, so absolute security cannot be guaranteed. Avoid entering sensitive personal information in questions.</p>
+    </div>
+
+    <div class="policy-section">
         <h2><span class="icon">👶</span> Children's Privacy</h2>
-        <p>Cosmic 8 Ball is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through the app, please contact us and we will delete it.</p>
+        <p>Cosmic 8 Ball is intended for users aged 13 and older. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through the app, contact us so we can review the request and remove matching information when it can be reliably identified.</p>
     </div>
 
     <div class="policy-section">
